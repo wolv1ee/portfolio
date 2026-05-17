@@ -1,7 +1,7 @@
 ---
 // src/layouts/Layout.astro
 // This wraps every page. Nav, footer, cursor, Lenis smooth scroll all live here.
-
+import { Analytics } from '@vercel/analytics/astro';
 export interface Props {
   title: string;
   description?: string;
@@ -69,7 +69,8 @@ const currentPath = Astro.url.pathname;
     <span>© 2026 Saad Mahmud</span>
     <a href="/contact" style="color:var(--accent); text-decoration:none;">Available for work ↗</a>
   </footer>
-
+<Analytics />
+</body>
 </body>
 </html>
 

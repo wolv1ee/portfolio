@@ -130,6 +130,62 @@ import Layout from '../layouts/Layout.astro';
     </a>
   </div>
 </section>
+<!-- ══════════════════════════════════════════
+     EXPERIENCE
+══════════════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+  <div class="section-label">Experience</div>
+  <h2>Work History.</h2>
+
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">Apr 2026 – Present</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">IT Technician</div>
+        <div class="exp-company">WMU College of Arts and Science Technology</div>
+        <ul class="exp-bullets">
+          <li>Manage user accounts, permissions, and device policies using Active Directory and Mosyle MDM.</li>
+          <li>Resolve hardware, software, printer, and network issues via Salesforce service tickets.</li>
+          <li>Support and troubleshoot Windows and macOS systems for faculty, staff, and students.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">Apr 2026 – Present</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Employment Report Assistant</div>
+        <div class="exp-company">WMU Career and Employment Services</div>
+        <ul class="exp-bullets">
+          <li>Analyze student employment data from PeopleSoft, Handshake, and Banner for reporting.</li>
+          <li>Build and maintain the Annual Student Employment Report using Excel.</li>
+          <li>Process confidential employment verifications via email, MS Teams, and phone.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">Apr 2025 – Apr 2026</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Student Facility Manager</div>
+        <div class="exp-company">WMU Student Center</div>
+        <ul class="exp-bullets">
+          <li>Configured and troubleshot 8 high-end gaming PCs for semester-long use.</li>
+          <li>Managed AV/IT systems for 50+ campus events annually, reducing event downtime.</li>
+          <li>Led help desk student staff to deliver reliable guest support experiences.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
   <!-- ══════════════════════════════════════════
        FEATURED PROJECT TEASER
   ══════════════════════════════════════════ -->
@@ -463,7 +519,68 @@ import Layout from '../layouts/Layout.astro';
   color: var(--accent);
   letter-spacing: 0.08em;
 }
+/* Experience ________ */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+.exp-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.exp-item:hover { background: var(--bg2); }
+.exp-item:last-child { border-bottom: none; }
+.exp-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+  padding-top: 4px;
+}
+.exp-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.exp-company {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.exp-bullets li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+}
+.exp-bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+}
 
+@media (max-width: 768px) {
+  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+}
   /* ── Projects ───────────────────────────────── */
   .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; }
   .project-card {

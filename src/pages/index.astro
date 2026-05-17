@@ -586,15 +586,19 @@ import Layout from '../layouts/Layout.astro';
 }
 
 @media (max-width: 768px) {
+  #hero {
+    grid-template-columns: 1fr;
+    padding: 6rem 1.5rem 2rem;
+  }
+  .terminal-col {
+    display: none;
+  }
+  .about-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+  .hero-status { display: none; }
   .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-}
-/* Experience _____ */
-.exp-logo {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  margin-top: 0.75rem;
-  opacity: 0.9;
+  .exp-logo { width: 60px; height: 60px; }
 }
   /* ── Projects ───────────────────────────────── */
   .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; }

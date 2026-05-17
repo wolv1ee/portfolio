@@ -553,12 +553,18 @@ import Layout from '../layouts/Layout.astro';
     color: var(--text-faint);
   }
 
-  @media (max-width: 768px) {
-    #hero { padding: 0 1.5rem; }
-    .about-grid { grid-template-columns: 1fr; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
-    .hero-status { display: none; }
+@media (max-width: 768px) {
+  #hero {
+    grid-template-columns: 1fr;
+    padding: 6rem 1.5rem 2rem;
+  }
+  .terminal-col {
+    display: none;
+  }
+  .about-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+  .hero-status { display: none; }
   }
 </style>
 

@@ -1,0 +1,117 @@
+---
+// src/pages/blog.astro
+import Layout from '../layouts/Layout.astro';
+
+// ✏️ EDIT: Add your real blog posts here.
+// href can be an external link (Medium, dev.to, Hashnode) or an internal route like /blog/post-slug
+const posts = [
+  {
+    date: 'May 2026',
+    title: 'In Progress',
+    excerpt: 'In Progress',
+    href: '#', // ✏️ EDIT: your post URL
+  },
+  // ✏️ ADD MORE posts here following the same structure
+];
+---
+
+<Layout title="Blog">
+  <section class="section" style="padding-top: 10rem;">
+    <div class="section-label">Writing</div>
+    <h2>Blog.</h2>
+    <p class="section-sub">What I've been upto lately</p>
+
+    <div class="blog-list">
+      {posts.map((post, i) => (
+        <a
+          href={post.href}
+          class={`blog-item reveal ${i > 0 ? `reveal-delay-${Math.min(i, 3)}` : ''}`}
+          target={post.href.startsWith('http') ? '_blank' : '_self'}
+          rel="noopener noreferrer"
+        >
+          <div class="blog-date">{post.date}</div>
+          <div class="blog-body">
+            <div class="blog-title">{post.title}</div>
+            <div class="blog-excerpt">{post.excerpt}</div>
+          </div>
+          <div class="blog-tag">{post.tag}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .blog-list { display: flex; flex-direction: column; }
+
+  .blog-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: start;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    position: relative;
+  }
+  .blog-item::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .blog-item:hover::after { transform: scaleX(1); }
+
+  .blog-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+    padding-top: 4px;
+  }
+  .blog-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    transition: color 0.2s;
+  }
+  .blog-item:hover .blog-title { color: var(--accent); }
+  .blog-excerpt {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .blog-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 4px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .blog-item:hover .blog-tag {
+    border-color: var(--accent-border);
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .blog-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    .blog-tag { align-self: auto; }
+  }
+</style>

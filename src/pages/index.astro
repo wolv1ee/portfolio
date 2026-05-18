@@ -65,6 +65,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
     </div>
 </section>
+
   <!-- ══════════════════════════════════════════
        ABOUT TEASER
   ══════════════════════════════════════════ -->
@@ -72,17 +73,17 @@ import Layout from '../layouts/Layout.astro';
     <div class="section-label">About me</div>
     <div class="about-grid">
 
-      <div class="about-img-wrap">
-        <img src="/images/saad.jpg" alt="Saad Mahmud" style="width:100%;height:100%;object-fit:cover;" />
-         <div class="about-corner">Saad Mahmud</div>
+      <div class="reveal">
+        <div class="about-img-wrap">
+          <img src="/images/saad.png" alt="Saad Mahmud" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+          <div class="about-corner">Saad Mahmud</div>
+        </div>
       </div>
 
-      <div class="about-text reveal">
-        <h2><em>Developer.</em><br />Security-minded.
-        </h2>
+      <div class="about-text reveal reveal-delay-1">
+        <h2><em>Developer.</em><br />Security-minded.</h2>
 
         <p>
-          <!-- Paragraph with the picture -->
           I'm studying CIS & Cybersecurity at Western Michigan University, 
           with hands-on experience as an IT Technician at WMU's College of Arts and Science Technology Services,
           Outside of Academics, I'm involved with WRAVEN (OSINT Team), the Developers Club (Systems Team),
@@ -90,13 +91,11 @@ import Layout from '../layouts/Layout.astro';
         </p>
 
         <p>
-          <!-- Paragraph 2 -->
           I have both technical and administrative experiences which made me adaptable to new challenges and a fast learner.
           Out of work I am a regular gamer, I love playing video games and enjoy playing MMORPG games the most, Currently obsessed with Path of Exile 2!
         </p>
 
         <div class="skills-list">
-          <!-- Skill Section -->
           <span class="skill-tag">Python</span>
           <span class="skill-tag">JavaScript</span>
           <span class="skill-tag">React</span>
@@ -130,6 +129,7 @@ import Layout from '../layouts/Layout.astro';
     </a>
   </div>
 </section>
+
 <!-- ══════════════════════════════════════════
      EXPERIENCE
 ══════════════════════════════════════════ -->
@@ -190,6 +190,7 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </div>
 </section>
+
   <!-- ══════════════════════════════════════════
        FEATURED PROJECT TEASER
   ══════════════════════════════════════════ -->
@@ -200,13 +201,9 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="projects-grid">
       <a href="https://github.com/wolv1ee" class="project-card featured reveal" target="_blank">
-        <!-- ✏️ EDIT href: link to your featured project repo or live URL -->
         <div class="project-content">
           <div class="project-num">01 — Featured</div>
-          <h3 class="project-title">
-            <!-- ✏️ EDIT: Featured project name -->
-            Malware Analysis App (In Progress)
-          </h3>
+          <h3 class="project-title">Malware Analysis App (In Progress)</h3>
           <p class="project-desc">
             A file security tool that computes the hash of a downloaded file and 
             cross-references it against known malware databases, warning the user 
@@ -222,12 +219,6 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
         <div class="project-img-wrap">
-          <!--
-            📸 REPLACE with a screenshot:
-            <img src="/images/projects/osint-dashboard.png" alt="OSINT Dashboard" style="width:100%;height:100%;object-fit:cover;" />
-
-            Put screenshot at: public/images/projects/osint-dashboard.png
-          -->
           <span class="placeholder-text">📸 Project screenshot</span>
         </div>
         <span class="project-arrow">↗</span>
@@ -290,88 +281,87 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 0.1em;
   }
   .terminal {
-  width: 100%;
-  background: rgba(13, 13, 13, 0.5);
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  align-self: center;
-  margin-top: 1rem;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-}
-.terminal-bar {
-  background: rgba(26, 26, 26, 0.6);
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 8px 8px 0 0;
-}
-.t-dot { width: 12px; height: 12px; border-radius: 50%; }
-.t-title {
-  margin-left: 8px;
-  color: var(--text-faint);
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-}
-.terminal-body {
-  padding: 1rem;
-  min-height: 350px;
-  max-height: 380px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  overflow-y: auto;
-}
-.terminal {
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.terminal:hover {
-  border-color: var(--accent-border);
-  box-shadow: 0 0 20px rgba(232,255,71,0.05);
-}
-
-.terminal-link {
-  transition: all 0.2s;
-}
-.terminal-link:hover {
-  border-color: var(--accent-border);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-.t-line { color: var(--text-muted); line-height: 1.6; }
-.t-prompt { color: var(--accent); margin-right: 6px; }
-.t-cmd { color: var(--text); }
-.t-output { color: var(--text-muted); padding-left: 1rem; }
-.t-cursor {
-  color: var(--accent);
-  animation: blink-cursor 1s infinite;
-}
-@keyframes blink-cursor { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
-.terminal-input-row {
-  display: flex;
-  align-items: center;
-  padding: 10px 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(13, 13, 13, 0.4);
-  backdrop-filter: blur(12px);
-  border-radius: 0 0 8px 8px;
-}
-.terminal-input-row input {
-  background: transparent;
-  border: none;
-  color: var(--text);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  outline: none;
-  flex: 1;
-  caret-color: var(--accent);
-}
-.terminal-input-row input::placeholder { color: var(--text-faint); }
+    width: 100%;
+    background: rgba(13, 13, 13, 0.5);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    align-self: center;
+    margin-top: 1rem;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+  }
+  .terminal-bar {
+    background: rgba(26, 26, 26, 0.6);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 8px 8px 0 0;
+  }
+  .t-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .t-title {
+    margin-left: 8px;
+    color: var(--text-faint);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+  .terminal-body {
+    padding: 1rem;
+    min-height: 350px;
+    max-height: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+  }
+  .terminal {
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .terminal:hover {
+    border-color: var(--accent-border);
+    box-shadow: 0 0 20px rgba(232,255,71,0.05);
+  }
+  .terminal-link {
+    transition: all 0.2s;
+  }
+  .terminal-link:hover {
+    border-color: var(--accent-border);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .t-line { color: var(--text-muted); line-height: 1.6; }
+  .t-prompt { color: var(--accent); margin-right: 6px; }
+  .t-cmd { color: var(--text); }
+  .t-output { color: var(--text-muted); padding-left: 1rem; }
+  .t-cursor {
+    color: var(--accent);
+    animation: blink-cursor 1s infinite;
+  }
+  @keyframes blink-cursor { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+  .terminal-input-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(13, 13, 13, 0.4);
+    backdrop-filter: blur(12px);
+    border-radius: 0 0 8px 8px;
+  }
+  .terminal-input-row input {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    outline: none;
+    flex: 1;
+    caret-color: var(--accent);
+  }
+  .terminal-input-row input::placeholder { color: var(--text-faint); }
   .scroll-line {
     width: 48px; height: 1px;
     background: var(--text-faint);
@@ -379,33 +369,33 @@ import Layout from '../layouts/Layout.astro';
     overflow: hidden;
   }
   .terminal-links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.terminal-link {
-  width: 100%;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  padding: 0.85rem 2rem;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-.terminal-link:hover {
-  border-color: rgba(232, 255, 71, 0.4);
-  color: var(--accent);
-  background: rgba(232, 255, 71, 0.1);
-  box-shadow: 0 12px 48px rgba(232, 255, 71, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-}
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .terminal-link {
+    width: 100%;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 2rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .terminal-link:hover {
+    border-color: rgba(232, 255, 71, 0.4);
+    color: var(--accent);
+    background: rgba(232, 255, 71, 0.1);
+    box-shadow: 0 12px 48px rgba(232, 255, 71, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
   .scroll-line::after {
     content: '';
     position: absolute;
@@ -415,15 +405,15 @@ import Layout from '../layouts/Layout.astro';
     animation: scrollLine 2s ease-in-out infinite;
   }
   .dots span {
-  animation: blink 1.2s infinite;
-  opacity: 0;
+    animation: blink 1.2s infinite;
+    opacity: 0;
   }
   .dots span:nth-child(1) { animation-delay: 0s; }
   .dots span:nth-child(2) { animation-delay: 0.2s; }
   .dots span:nth-child(3) { animation-delay: 0.4s; }
   @keyframes blink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
   }
   .status-dot {
     width: 6px; height: 6px;
@@ -446,9 +436,10 @@ import Layout from '../layouts/Layout.astro';
     position: relative;
     aspect-ratio: 4/5;
     max-width: 420px;
-    background: var(--bg3);
-    border: 1px solid var(--border);
+    background: transparent;
+    border: none;
     overflow: hidden;
+    border-radius: 0;
   }
   .about-img-placeholder {
     width: 100%; height: 100%;
@@ -462,18 +453,20 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.75rem;
     letter-spacing: 0.1em;
   }
-  .about-img-placeholder svg { opacity: 0.3; }
-  .about-img-placeholder .hint { font-size: 0.65rem; opacity: 0.4; }
   .about-corner {
-    position: absolute;
-    bottom: 1.5rem; left: 1.5rem;
-    background: var(--accent);
-    color: #080808;
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    letter-spacing: 0.08em;
-    padding: 6px 12px;
-    font-weight: 600;
+  position: absolute;
+  bottom: 1.5rem; left: 1.5rem;
+  background: rgba(232, 255, 71, 0.15);
+  color: #ffffff;;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  font-weight: 600;
+  border: 1.5px solid rgba(232, 255, 71, 0.4);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(232, 255, 71, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   }
   .about-text p {
     color: var(--text-muted);
@@ -481,152 +474,141 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1rem;
     line-height: 1.8;
   }
-  
   .about-text p strong { color: var(--text); font-weight: 500; }
+  .about-text { padding-left: 0rem; }
   .skills-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2rem; }
-/* --Certifications */
 
-.certs-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  margin-bottom: 0;
-}
-.cert-card {
-  background: var(--bg2);
-  padding: 1.5rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  transition: background 0.2s;
-  text-decoration: none;
-  color: var(--text);
-}
-.cert-card:hover { background: var(--bg3); }
-.cert-icon {
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--accent);
-  width: 40px;
-  text-align: center;
-}
-.cert-body { flex: 1; }
-.cert-name {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--text);
-  font-weight: 600;
-}
-.cert-issuer {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--accent);
-  margin-top: 2px;
-}
-.cert-date {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-faint);
-  margin-top: 2px;
-}
-.cert-badge {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  padding: 4px 12px;
-  border: 1px solid var(--accent-border);
-  color: var(--accent);
-  letter-spacing: 0.08em;
-}
-/* Experience ________ */
-.exp-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border: 1px solid var(--border);
-}
-.exp-item {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 2rem;
-  padding: 2rem;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.2s;
-}
-.exp-item:hover { background: var(--bg2); }
-.exp-item:last-child { border-bottom: none; }
-.exp-date {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-faint);
-  letter-spacing: 0.05em;
-  padding-top: 4px;
-}
-.exp-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 4px;
-}
-.exp-company {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  letter-spacing: 0.03em;
-}
-.exp-bullets {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.exp-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 200px;
-}
-
-.exp-logo {
-  width: 135px;
-  height: 135px;
-  object-fit: contain;
-  display: block;
-}
-.exp-bullets li {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  padding-left: 1rem;
-  position: relative;
-}
-.exp-bullets li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-size: 0.75rem;
-}
-
-@media (max-width: 768px) {
-  #hero {
-    grid-template-columns: 1fr;
-    padding: 6rem 1.5rem 2rem;
+  /* ── Certifications ──────────────────────────── */
+  .certs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 0;
   }
-  .terminal-col {
-    display: none;
+  .cert-card {
+    background: var(--bg2);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: var(--text);
   }
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
-  .hero-status { display: none; }
-  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-  .exp-logo { width: 60px; height: 60px; }
-}
+  .cert-card:hover { background: var(--bg3); }
+  .cert-icon {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    width: 40px;
+    text-align: center;
+  }
+  .cert-body { flex: 1; }
+  .cert-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .cert-issuer {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+  .cert-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    margin-top: 2px;
+  }
+  .cert-badge {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    padding: 4px 12px;
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── Experience ──────────────────────────────── */
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .exp-item:hover { background: var(--bg2); }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-item:first-child { border-radius: 12px 12px 0 0; }
+  .exp-item:last-child { border-radius: 0 0 12px 12px; }
+  .exp-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    letter-spacing: 0.05em;
+    padding-top: 4px;
+  }
+  .exp-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 200px;
+  }
+  .exp-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .exp-company {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+  }
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .exp-bullets li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .exp-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.75rem;
+  }
+  .exp-logo {
+    width: 135px;
+    height: 135px;
+    object-fit: contain;
+    display: block;
+  }
+
   /* ── Projects ───────────────────────────────── */
   .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; }
   .project-card {
@@ -639,6 +621,7 @@ import Layout from '../layouts/Layout.astro';
     text-decoration: none;
     display: block;
     color: var(--text);
+    border-radius: 12px;
   }
   .project-card::before {
     content: '';
@@ -658,6 +641,7 @@ import Layout from '../layouts/Layout.astro';
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
+    border-radius: 12px;
   }
   .project-num {
     font-family: var(--font-mono);
@@ -673,8 +657,8 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: -0.02em;
     margin-bottom: 0.75rem;
     line-height: 1.2;
+    color: var(--accent);
   }
-  .project-title {color: var(--accent);}
   .project-card.featured .project-title { font-size: 2rem; }
   .project-desc {
     color: var(--text-muted);
@@ -716,27 +700,20 @@ import Layout from '../layouts/Layout.astro';
     color: var(--text-faint);
   }
 
-@media (max-width: 768px) {
-  #hero {
-    grid-template-columns: 1fr;
-    padding: 6rem 1.5rem 2rem;
+  @media (max-width: 768px) {
+    #hero {
+      grid-template-columns: 1fr;
+      padding: 6rem 1.5rem 2rem;
+    }
+    .terminal-col { display: none !important; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-text { padding-left: 0; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+    .hero-status { display: none; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .exp-logo { width: 60px; height: 60px; }
   }
-  .terminal-col {
-    display: none !important;
-  }
-  .exp-item {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  .exp-logo {
-    width: 50px;
-    height: 50px;
-  }
-  .about-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
-  .hero-status { display: none; }
-}
 </style>
 
 <script>

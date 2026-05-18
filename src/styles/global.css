@@ -286,11 +286,8 @@ footer {
     gap: 0.5rem; 
     flex-wrap: wrap;
   }
-  .nav-links a { 
-    font-size: 0.7rem;
-    letter-spacing: 0;
-  }
-  .nav-logo { font-size: 0.7rem; }
+  .nav-links a { font-size: 0.7rem;letter-spacing: 0; }
+  .nav-logo { font-size: 0.8rem; }
   h1 { font-size: clamp(2rem, 8vw, 3rem); }
   h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
   .section { padding: 4rem 1.5rem; }

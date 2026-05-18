@@ -298,10 +298,6 @@ footer {
     letter-spacing: 0;
     white-space: nowrap;
   }
-  .nav-logo {
-    font-size: 0.85rem;
-    white-space: nowrap;
-  }
 }
 /* ── Terminal ──────────────────────────────────── */
 .t-link-icon {

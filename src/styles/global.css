@@ -292,6 +292,17 @@ footer {
   .section { padding: 4rem 1.5rem; }
   footer { flex-direction: column; gap: 1rem; text-align: center; }
 }
+@media (max-width: 768px) {
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  .nav-logo {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
 /* ── Terminal ──────────────────────────────────── */
 .t-link-icon {
   width: 28px; height: 28px;

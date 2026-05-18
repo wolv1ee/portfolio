@@ -291,20 +291,25 @@ import Layout from '../layouts/Layout.astro';
   }
   .terminal {
   width: 100%;
-  background: #0d0d0d;
-  border: 1px solid var(--border);
+  background: rgba(13, 13, 13, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
   font-family: var(--font-mono);
   font-size: 0.78rem;
   align-self: center;
   margin-top: 1rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
 }
 .terminal-bar {
-  background: #1a1a1a;
+  background: rgba(26, 26, 26, 0.6);
   padding: 10px 14px;
   display: flex;
   align-items: center;
   gap: 4px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 8px 8px 0 0;
 }
 .t-dot { width: 12px; height: 12px; border-radius: 50%; }
 .t-title {
@@ -351,8 +356,10 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   align-items: center;
   padding: 10px 14px;
-  border-top: 1px solid var(--border);
-  background: #0d0d0d;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(13, 13, 13, 0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 0 0 8px 8px;
 }
 .terminal-input-row input {
   background: transparent;
@@ -384,14 +391,20 @@ import Layout from '../layouts/Layout.astro';
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   padding: 0.85rem 2rem;
-  border: 1px solid var(--border);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
   color: var(--text-muted);
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .terminal-link:hover {
-  border-color: var(--border-hover);
-  color: var(--text);
+  border-color: rgba(232, 255, 71, 0.4);
+  color: var(--accent);
+  background: rgba(232, 255, 71, 0.1);
+  box-shadow: 0 12px 48px rgba(232, 255, 71, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
   .scroll-line::after {
     content: '';
@@ -465,9 +478,10 @@ import Layout from '../layouts/Layout.astro';
   .about-text p {
     color: var(--text-muted);
     margin-bottom: 1.5rem;
-    font-size: 1.15rem;
-    line-height: 1.9;
+    font-size: 1rem;
+    line-height: 1.8;
   }
+  
   .about-text p strong { color: var(--text); font-weight: 500; }
   .skills-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2rem; }
 /* --Certifications */
@@ -569,6 +583,19 @@ import Layout from '../layouts/Layout.astro';
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+.exp-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 200px;
+}
+
+.exp-logo {
+  width: 135px;
+  height: 135px;
+  object-fit: contain;
+  display: block;
 }
 .exp-bullets li {
   font-size: 0.9rem;

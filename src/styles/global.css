@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
 
 :root {
   --bg: #080808;
@@ -13,7 +13,7 @@
   --accent-dim: rgba(232,255,71,0.12);
   --accent-border: rgba(232,255,71,0.3);
   --font-display: 'Share Tech Mono', monospace;
-  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-body: 'JetBrains Mono', monospace;
   --font-mono: 'IBM Plex Mono', monospace;
 }
 
@@ -104,16 +104,28 @@ nav.scrolled {
 }
 .nav-links a {
   font-family: var(--font-mono);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   color: var(--text);
-  font-weight: 600px;
+  font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.05em;
-  transition: color 0.2s;
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  padding: 0.4rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
 }
 .nav-links a:hover,
-.nav-links a.active { color: var(--accent); }
-.nav-links a .num { color: var(--accent); margin-right: 4px; opacity: 0.7; }
+.nav-links a.active {
+  color: var(--text);
+  background: rgba(232,255,71,0.10);
+  border-color: rgba(232,255,71,0.32);
+  box-shadow: 0 8px 24px rgba(232,255,71,0.10), inset 0 1px 0 rgba(255,255,255,0.18);
+  transform: translateY(-2px);
+}
+.nav-links a .num { color: var(--accent); margin-right: 4px; opacity: 0.85; }
 
 /* ── Layout ────────────────────────────────────── */
 main { padding-top: 0; }
@@ -188,18 +200,35 @@ h3 {
   border: 1px solid transparent;
 }
 .btn-primary {
-  background: var(--accent);
-  color: #080808;
+  background: rgba(232, 255, 71, 0.12);
+  color: var(--accent);
   font-weight: 600;
-  border-color: var(--accent);
+  border: 2px solid rgba(232, 255, 71, 0.4);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(232, 255, 71, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.btn-primary:hover { background: transparent; color: var(--accent); }
+.btn-primary:hover { 
+  background: rgba(232, 255, 71, 0.18);
+  border-color: rgba(232, 255, 71, 0.7);
+  box-shadow: 0 12px 48px rgba(232, 255, 71, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
 .btn-ghost {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   color: var(--text-muted);
-  border-color: var(--border);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.btn-ghost:hover { border-color: var(--border-hover); color: var(--accent); }
+.btn-ghost:hover { 
+  background: rgba(232, 255, 71, 0.08);
+  border-color: rgba(232, 255, 71, 0.5);
+  color: var(--accent);
+  box-shadow: 0 12px 48px rgba(232, 255, 71, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
 
 /* ── Skill tags ────────────────────────────────── */
 .skill-tag {
@@ -207,15 +236,19 @@ h3 {
   font-size: 0.72rem;
   letter-spacing: 0.05em;
   padding: 6px 14px;
-  border: 1px solid var(--border);
+  border: 1.5px solid rgba(232, 255, 71, 0.35);
   color: var(--accent);
-  background: var(--bg2);
-  transition: all 0.2s;
+  background: rgba(232, 255, 71, 0.1);
+  backdrop-filter: blur(16px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(232, 255, 71, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .skill-tag:hover {
-  border-color: var(--accent-border);
-  color: var(--accent);
-  background: var(--accent-dim);
+  border-color: rgba(232, 255, 71, 0.6);
+  color: var(--text);
+  background: rgba(232, 255, 71, 0.16);
+  box-shadow: 0 8px 24px rgba(232, 255, 71, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
 }
 
 /* ── Reveal animation ──────────────────────────── */
@@ -252,12 +285,21 @@ footer {
 /* -- Termninal _______*/
 .t-link-icon {
   width: 28px; height: 28px;
-  background: var(--bg3);
-  border: 1px solid var(--border);
+  background: rgba(232, 255, 71, 0.12);
+  border: 1.5px solid rgba(232, 255, 71, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(232, 255, 71, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.t-link-icon:hover {
+  background: rgba(232, 255, 71, 0.18);
+  border-color: rgba(232, 255, 71, 0.6);
+  box-shadow: 0 8px 24px rgba(232, 255, 71, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
 }
 .terminal-link {
   display: flex;
@@ -278,14 +320,22 @@ footer {
   border: 1px solid var(--border);
 }
 .cert-card {
-  background: var(--bg2);
+  background: rgba(255, 255, 255, 0.08);
   padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  transition: background 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-.cert-card:hover { background: var(--bg3); }
+.cert-card:hover { 
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(232, 255, 71, 0.35);
+  box-shadow: 0 12px 48px rgba(232, 255, 71, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
 .cert-icon { font-size: 1.5rem; }
 .cert-body { flex: 1; }
 .cert-name {
@@ -313,4 +363,10 @@ footer {
   border: 1px solid var(--accent-border);
   color: var(--accent);
   letter-spacing: 0.08em;
+}
+/* ── Experience ───────────────────────────────── */
+.exp-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
 }

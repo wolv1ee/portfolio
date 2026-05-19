@@ -28,7 +28,7 @@ const currentPath = Astro.url.pathname;
 
   <nav id="nav">
     <a href="/" class="nav-logo">
-  <img src="/images/logo.png" alt="Saad Mahmud" style="height: 70px;" />
+  <img src="/images/logo.png" alt="Saad Mahmud" style="height: 55px;" />
 </a>
     <ul class="nav-links">
       <li>
@@ -110,4 +110,11 @@ const currentPath = Astro.url.pathname;
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   reveals.forEach(el => observer.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) lenis.scrollTo(target, { offset: -80, duration: 1.5 });
+  });
+});
 </script>

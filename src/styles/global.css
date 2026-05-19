@@ -291,9 +291,9 @@ footer {
     gap: 0.4rem; 
   }
   .nav-links a { 
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     letter-spacing: 0;
-    padding: 0.3rem 0.5rem;
+    padding: 0.35rem 0.6rem;
     white-space: nowrap;
   }
   h1 { font-size: clamp(2rem, 8vw, 3rem); }

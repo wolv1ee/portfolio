@@ -19,13 +19,13 @@ const currentPath = Astro.url.pathname;
   <meta name="author" content="Saad Mahmud" />
   <meta property="og:title" content={`${title} | Saad Mahmud`} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content="/images/saad.png" />
+  <meta property="og:image" content="/images/saad.webp" />
   <meta property="og:url" content="https://saadmahmud.dev" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={`${title} | Saad Mahmud`} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content="/images/saad.png" />
+  <meta name="twitter:image" content="/images/saad.webp" />
   <meta name="google-site-verification" content="KYJy9HiuntDMl4azzJR_CEFvNJPmyR6IUp2GsP6zfrw" />
   <title>{title} | Saad Mahmud</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -34,9 +34,6 @@ const currentPath = Astro.url.pathname;
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
 
   <nav id="nav">
     <a href="/" class="nav-logo">
@@ -89,23 +86,6 @@ const currentPath = Astro.url.pathname;
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => { lenis.raf(time * 1000); });
   gsap.ticker.lagSmoothing(0);
-
-  const cursor = document.getElementById('cursor')!;
-  const ring = document.getElementById('cursorRing')!;
-
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    setTimeout(() => {
-      ring.style.left = e.clientX + 'px';
-      ring.style.top = e.clientY + 'px';
-    }, 80);
-  });
-
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
-  });
 
   const nav = document.getElementById('nav')!;
   lenis.on('scroll', ({ scroll }: { scroll: number }) => {

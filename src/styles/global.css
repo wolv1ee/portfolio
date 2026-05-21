@@ -273,6 +273,22 @@ footer {
   h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
   .section { padding: 4rem 1.5rem; }
   footer { flex-direction: column; gap: 1rem; text-align: center; }
+
+  body::before { display: none; }
+  .terminal,
+  .terminal-bar,
+  .terminal-input-row,
+  .terminal-link,
+  .t-link-icon,
+  .btn-primary,
+  .btn-ghost,
+  .cert-card,
+  .project-card,
+  .nav-links a {
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border-color: rgba(255,255,255,0.10) !important;
+  }
 }
 /* ── Terminal ──────────────────────────────────── */
 .t-link-icon {

@@ -73,9 +73,6 @@ const currentPath = Astro.url.pathname;
 <script>
   import Lenis from 'lenis';
   import gsap from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-  gsap.registerPlugin(ScrollTrigger);
 
   const lenis = new Lenis({
     duration: 1.2,
@@ -83,7 +80,6 @@ const currentPath = Astro.url.pathname;
     smoothWheel: true,
   });
 
-  lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => { lenis.raf(time * 1000); });
   gsap.ticker.lagSmoothing(0);
 
@@ -102,11 +98,4 @@ const currentPath = Astro.url.pathname;
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   reveals.forEach(el => observer.observe(el));
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) lenis.scrollTo(target, { offset: -80, duration: 1.5 });
-  });
-});
 </script>

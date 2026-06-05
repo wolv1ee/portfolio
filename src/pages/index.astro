@@ -2,12 +2,7 @@
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 ---
-
 <Layout title="Home">
-
-  <!-- ══════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════ -->
   <section id="hero">
   <div class="hero-left">
     <h1>
@@ -24,7 +19,6 @@ import Layout from '../layouts/Layout.astro';
       <a href="/contact" class="btn btn-ghost">Get in Touch</a>
     </div>
   </div>
-
   <div class="terminal-col">
     <div class="terminal">
       <div class="terminal-bar">
@@ -63,56 +57,45 @@ import Layout from '../layouts/Layout.astro';
         LinkedIn ↗
       </a>
     </div>
-    </div>
+  </div>
 </section>
 
-  <!-- ══════════════════════════════════════════
-       ABOUT TEASER
-  ══════════════════════════════════════════ -->
-  <section id="about" class="section" style="padding-top: 3rem;">
-    <div class="section-label">About me</div>
-    <div class="about-grid">
-
-      <div class="reveal">
-        <div class="about-img-wrap">
-          <img src="/images/saad.webp" alt="Saad Mahmud" loading="eager" decoding="async" fetchpriority="high" width="3086" height="3744" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
-        </div>
-      </div>
-
-      <div class="about-text reveal reveal-delay-1">
-        <h2><em>Developer.</em><br />Security-minded.</h2>
-
-        <p>
-          I'm studying CIS & Cybersecurity at Western Michigan University, 
-          with hands-on experience as an IT Technician at WMU's College of Arts and Science Technology Services,
-          Outside of Academics, I'm involved with WRAVEN (OSINT Team), the Developers Club (Systems Team),
-          and the Data Science & AI Club (Vice President).
-        </p>
-
-        <p>
-          I have both technical and administrative experiences which made me adaptable to new challenges and a fast learner.
-          Out of work I am a regular gamer, I love playing video games and enjoy playing MMORPG games the most, Currently obsessed with Path of Exile 2!
-        </p>
-
-        <div class="skills-list">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Astro</span>
-          <span class="skill-tag">System & Network Admin</span>
-          <span class="skill-tag">Linux</span>
-          <span class="skill-tag">CSS</span>
-          <span class="skill-tag">Active Directory</span>
-          <span class="skill-tag">Mosyle</span>
-          <span class="skill-tag">Intune</span>
-        </div>
+<section id="about" class="section" style="padding-top: 3rem;">
+  <div class="section-label">About me</div>
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="about-img-wrap">
+        <img src="/images/saad.webp" alt="Saad Mahmud" loading="eager" decoding="async" fetchpriority="high" width="3086" height="3744" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
       </div>
     </div>
-  </section>
+    <div class="about-text reveal reveal-delay-1">
+      <h2><em>Developer.</em><br />Security-minded.</h2>
+      <p>
+        I'm studying CIS & Cybersecurity at Western Michigan University, 
+        with hands-on experience as an IT Technician at WMU's College of Arts and Science Technology Services,
+        Outside of Academics, I'm involved with WRAVEN (OSINT Team), the Developers Club (Systems Team),
+        and the Data Science & AI Club (Vice President).
+      </p>
+      <p>
+        I have both technical and administrative experiences which made me adaptable to new challenges and a fast learner.
+        Out of work I am a regular gamer, I love playing video games and enjoy playing MMORPG games the most, Currently obsessed with Path of Exile 2!
+      </p>
+      <div class="skills-list">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Astro</span>
+        <span class="skill-tag">System & Network Admin</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">Active Directory</span>
+        <span class="skill-tag">Mosyle</span>
+        <span class="skill-tag">Intune</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- ══════════════════════════════════════════
-     CERTIFICATIONS
-══════════════════════════════════════════ -->
 <section id="certifications" class="section" style="padding-top:0; padding-bottom:2rem;">
   <div class="section-label">Certifications</div>
   <h2>Credentials.</h2>
@@ -129,184 +112,147 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     EXPERIENCE
-══════════════════════════════════════════ -->
 <section id="experience" class="section" style="padding-top:0;">
   <div class="section-label">Experience</div>
   <h2>Work History.</h2>
-<div class="exp-list reveal">
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">Apr 2026 – Present</div>
-      <a href="https://wmich.edu/arts-sciences/technology" target="_blank">
-        <img src="/images/WMU.svg" alt="WMU" class="exp-logo" loading="lazy" decoding="async" />
-      </a>
+  <div class="exp-list reveal">
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">Apr 2026 – Present</div>
+        <a href="https://wmich.edu/arts-sciences/technology" target="_blank">
+          <img src="/images/WMU.svg" alt="WMU" class="exp-logo" loading="lazy" decoding="async" />
+        </a>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">IT Technician</div>
+        <div class="exp-company">WMU College of Arts and Science Technology Services</div>
+        <ul class="exp-bullets">
+          <li>Manage user accounts, permissions, and device policies using Active Directory and Mosyle MDM.</li>
+          <li>Resolve hardware, software, printer, and network issues via Salesforce service tickets.</li>
+          <li>Support and troubleshoot Windows and macOS systems for faculty, staff, and students.</li>
+        </ul>
+      </div>
     </div>
-    <div class="exp-right">
-      <div class="exp-title">IT Technician</div>
-      <div class="exp-company">WMU College of Arts and Science Technology Services</div>
-      <ul class="exp-bullets">
-        <li>Manage user accounts, permissions, and device policies using Active Directory and Mosyle MDM.</li>
-        <li>Resolve hardware, software, printer, and network issues via Salesforce service tickets.</li>
-        <li>Support and troubleshoot Windows and macOS systems for faculty, staff, and students.</li>
-      </ul>
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">Apr 2026 – Present</div>
+        <a href="https://wmich.edu/career" target="_blank">
+          <img src="/images/WMU.svg" alt="WMU" class="exp-logo" loading="lazy" decoding="async" />
+        </a>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Employment Report Assistant</div>
+        <div class="exp-company">WMU Career and Employment Services</div>
+        <ul class="exp-bullets">
+          <li>Analyze student employment data from PeopleSoft, Handshake, and Banner for reporting.</li>
+          <li>Build and maintain the Annual Student Employment Report using Excel.</li>
+          <li>Process confidential employment verifications via email, MS Teams, and phone.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">Apr 2025 – Apr 2026</div>
+        <a href="https://wmich.edu/student-center" target="_blank">
+          <img src="/images/WMU.svg" alt="WMU" class="exp-logo" loading="lazy" decoding="async" />
+        </a>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Student Facility Manager</div>
+        <div class="exp-company">WMU Student Center</div>
+        <ul class="exp-bullets">
+          <li>Configured and troubleshot 8 high-end gaming PCs for semester-long use.</li>
+          <li>Managed AV/IT systems for 50+ campus events annually, reducing event downtime.</li>
+          <li>Led help desk student staff to deliver reliable guest support experiences.</li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">Apr 2026 – Present</div>
-      <a href="https://wmich.edu/career" target="_blank">
-        <img src="/images/WMU.svg" alt="WMU" class="exp-logo" loading="lazy" decoding="async" />
-      </a>
-    </div>
-    <div class="exp-right">
-      <div class="exp-title">Employment Report Assistant</div>
-      <div class="exp-company">WMU Career and Employment Services</div>
-      <ul class="exp-bullets">
-        <li>Analyze student employment data from PeopleSoft, Handshake, and Banner for reporting.</li>
-        <li>Build and maintain the Annual Student Employment Report using Excel.</li>
-        <li>Process confidential employment verifications via email, MS Teams, and phone.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="exp-item">
-    <div class="exp-left">
-      <div class="exp-date">Apr 2025 – Apr 2026</div>
-      <a href="https://wmich.edu/student-center" target="_blank">
-        <img src="/images/WMU.svg" alt="WMU" class="exp-logo" loading="lazy" decoding="async" />
-      </a>
-    </div>
-    <div class="exp-right">
-      <div class="exp-title">Student Facility Manager</div>
-      <div class="exp-company">WMU Student Center</div>
-      <ul class="exp-bullets">
-        <li>Configured and troubleshot 8 high-end gaming PCs for semester-long use.</li>
-        <li>Managed AV/IT systems for 50+ campus events annually, reducing event downtime.</li>
-        <li>Led help desk student staff to deliver reliable guest support experiences.</li>
-      </ul>
-    </div>
-  </div>
-</div>
 </section>
 
-  <!-- ══════════════════════════════════════════
-       FEATURED PROJECT TEASER
-  ══════════════════════════════════════════ -->
-  <section id="projects" class="section" style="padding-top:0;">
-    <div class="section-label">Featured Work</div>
-    <h2>Recent Projects.</h2>
-    <p class="section-sub">A few things I made recently.</p>
-
-    <div class="projects-grid reveal">
-      <a href="https://threatlens-eight.vercel.app/" class="project-card featured reveal" target="_blank">
-        <div class="project-content">
-          <div class="project-num">01 — Featured</div>
-          <h3 class="project-title">Malware Analysis Web App</h3>
-          <p class="project-desc">
-            A file security tool that computes the hash of a downloaded file and 
-            cross-references it against known malware databases, warning the user 
-            if anything suspicious is detected.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Next.js</span>
-            <span class="project-tag">Tailwind CSS</span>
-            <span class="project-tag">Supabase</span>
-            <span class="project-tag">Google Safe Browsing API</span>
-            <span class="project-tag">VirusTotal API</span>
-          </div>
+<section id="projects" class="section" style="padding-top:0;">
+  <div class="section-label">Featured Work</div>
+  <h2>Recent Projects.</h2>
+  <p class="section-sub">A few things I made recently.</p>
+  <div class="projects-grid reveal">
+    <a href="https://threatlens-eight.vercel.app/" class="project-card featured" target="_blank">
+      <div class="project-content">
+        <div class="project-num">01 — Featured</div>
+        <h3 class="project-title">Malware Analysis Web App</h3>
+        <p class="project-desc">
+          A file security tool that computes the hash of a downloaded file and 
+          cross-references it against known malware databases, warning the user 
+          if anything suspicious is detected.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Next.js</span>
+          <span class="project-tag">Tailwind CSS</span>
+          <span class="project-tag">Supabase</span>
+          <span class="project-tag">Google Safe Browsing API</span>
+          <span class="project-tag">VirusTotal API</span>
         </div>
-        <div class="project-img-wrap">
-          <span class="placeholder-text">"/images/Threatlens.png</span>
-        </div>
-        <span class="project-arrow">↗</span>
-      </a>
-    </div>
-
-    <div style="margin-top:2rem;">
-      <a href="/projects" class="btn btn-ghost">All Projects →</a>
-    </div>
-  </section>
+      </div>
+      <div class="project-img-wrap">
+        <img src="/images/Threatlens.png" alt="ThreatLens" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <span class="project-arrow">↗</span>
+    </a>
+  </div>
+  <div style="margin-top:2rem;">
+    <a href="/projects" class="btn btn-ghost">All Projects →</a>
+  </div>
+</section>
 
 </Layout>
 
 <style>
-  /* ── Hero ───────────────────────────────────── */
   #hero {
     min-height: auto;
     display: grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
     padding: 7rem 3rem 0rem;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
   }
-  .hero-tag {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .hero-tag::before {
-    content: '';
-    width: 32px; height: 1px;
-    background: var(--accent);
-  }
   .hero-sub {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  max-width: 480px;
-  line-height: 1.8;
-  margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
   }
   .hero-sub strong { color: var(--text); font-weight: 500; }
   .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .hero-scroll {
-    position: absolute;
-    bottom: 3rem; left: 3rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--text-faint);
-    letter-spacing: 0.1em;
-  }
   .terminal {
     width: 100%;
-    background: rgba(13, 13, 13, 0.5);
-    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    background: rgba(13,13,13,0.5);
+    border: 1.5px solid rgba(255,255,255,0.15);
     font-family: var(--font-mono);
     font-size: 0.78rem;
     align-self: center;
     margin-top: 1rem;
     backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
     border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .terminal:hover {
+    border-color: var(--accent-border);
+    box-shadow: 0 0 20px rgba(232,255,71,0.05);
   }
   .terminal-bar {
-    background: rgba(26, 26, 26, 0.6);
+    background: rgba(26,26,26,0.6);
     padding: 10px 14px;
     display: flex;
     align-items: center;
     gap: 4px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     border-radius: 8px 8px 0 0;
   }
   .t-dot { width: 12px; height: 12px; border-radius: 50%; }
-  .t-title {
-    margin-left: 8px;
-    color: var(--text-faint);
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-  }
+  .t-title { margin-left: 8px; color: var(--text-faint); font-size: 0.7rem; letter-spacing: 0.05em; }
   .terminal-body {
     padding: 1rem;
     min-height: 350px;
@@ -316,21 +262,6 @@ import Layout from '../layouts/Layout.astro';
     gap: 6px;
     overflow-y: auto;
   }
-  .terminal {
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-  .terminal:hover {
-    border-color: var(--accent-border);
-    box-shadow: 0 0 20px rgba(232,255,71,0.05);
-  }
-  .terminal-link {
-    transition: all 0.2s;
-  }
-  .terminal-link:hover {
-    border-color: var(--accent-border);
-    color: var(--accent);
-    transform: translateY(-2px);
-  }
   .t-line { color: var(--text-muted); line-height: 1.6; }
   .t-prompt { color: var(--accent); margin-right: 6px; }
   .t-cmd { color: var(--text); }
@@ -339,9 +270,8 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     align-items: center;
     padding: 10px 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(13, 13, 13, 0.4);
-    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    background: rgba(13,13,13,0.4);
     border-radius: 0 0 8px 8px;
   }
   .terminal-input-row input {
@@ -355,12 +285,6 @@ import Layout from '../layouts/Layout.astro';
     caret-color: var(--accent);
   }
   .terminal-input-row input::placeholder { color: var(--text-faint); }
-  .scroll-line {
-    width: 48px; height: 1px;
-    background: var(--text-faint);
-    position: relative;
-    overflow: hidden;
-  }
   .terminal-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -374,51 +298,27 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.8rem;
     letter-spacing: 0.05em;
     padding: 0.85rem 2rem;
-    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(255,255,255,0.2);
     color: var(--text-muted);
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(16px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
   .terminal-link:hover {
-    border-color: rgba(232, 255, 71, 0.4);
+    border-color: rgba(232,255,71,0.4);
     color: var(--accent);
-    background: rgba(232, 255, 71, 0.1);
-    box-shadow: 0 12px 48px rgba(232, 255, 71, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    background: rgba(232,255,71,0.1);
     transform: translateY(-2px);
   }
-  .scroll-line::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: var(--accent);
-    animation: scrollLine 2s ease-in-out infinite;
-  }
-  .dots span {
-    animation: blink 1.2s infinite;
-    opacity: 0;
-  }
+  .dots span { animation: blink 1.2s infinite; opacity: 0; }
   .dots span:nth-child(1) { animation-delay: 0s; }
   .dots span:nth-child(2) { animation-delay: 0.2s; }
   .dots span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes blink {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-  }
-  .status-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: #4ade80;
-    box-shadow: 0 0 8px #4ade80;
-    animation: pulse 2s ease-in-out infinite;
-    writing-mode: horizontal-tb;
-  }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-  /* ── About ──────────────────────────────────── */
+  @keyframes blink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -432,34 +332,6 @@ import Layout from '../layouts/Layout.astro';
     background: transparent;
     border: none;
     overflow: hidden;
-    border-radius: 0;
-  }
-  .about-img-placeholder {
-    width: 100%; height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    color: var(--text-faint);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-  }
-  .about-corner {
-  position: absolute;
-  bottom: 1.5rem; left: 1.5rem;
-  background: rgba(232, 255, 71, 0.15);
-  color: #ffffff;;
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-  padding: 6px 12px;
-  font-weight: 600;
-  border: 1.5px solid rgba(232, 255, 71, 0.4);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 16px rgba(232, 255, 71, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
   }
   .about-text p {
     color: var(--text-muted);
@@ -468,10 +340,7 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.8;
   }
   .about-text p strong { color: var(--text); font-weight: 500; }
-  .about-text { padding-left: 0rem; }
   .skills-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2rem; }
-
-  /* ── Certifications ──────────────────────────── */
   .certs-grid {
     display: flex;
     flex-direction: column;
@@ -490,53 +359,20 @@ import Layout from '../layouts/Layout.astro';
     text-decoration: none;
     color: var(--text);
   }
-  .cert-icon-img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  align: center;
-  background: white;
-  border-radius: 7px;
-  padding: 3px;
-}
   .cert-card:hover { background: var(--bg3); }
-  .cert-icon {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--accent);
-    width: 40px;
-    text-align: center;
+  .cert-icon-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: white;
+    border-radius: 7px;
+    padding: 3px;
   }
   .cert-body { flex: 1; }
-  .cert-name {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    color: var(--text);
-    font-weight: 600;
-  }
-  .cert-issuer {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--accent);
-    margin-top: 2px;
-  }
-  .cert-date {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--text-faint);
-    margin-top: 2px;
-  }
-  .cert-badge {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    padding: 4px 12px;
-    border: 1px solid var(--accent-border);
-    color: var(--accent);
-    letter-spacing: 0.08em;
-  }
-
-  /* ── Experience ──────────────────────────────── */
+  .cert-name { font-family: var(--font-display); font-size: 1rem; color: var(--text); font-weight: 600; }
+  .cert-issuer { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-top: 2px; }
+  .cert-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint); margin-top: 2px; }
+  .cert-badge { font-family: var(--font-mono); font-size: 0.68rem; padding: 4px 12px; border: 1px solid var(--accent-border); color: var(--accent); letter-spacing: 0.08em; }
   .exp-list {
     display: flex;
     flex-direction: column;
@@ -555,63 +391,14 @@ import Layout from '../layouts/Layout.astro';
   }
   .exp-item:hover { background: var(--bg2); }
   .exp-item:last-child { border-bottom: none; }
-  .exp-item:first-child { border-radius: 12px 12px 0 0; }
-  .exp-item:last-child { border-radius: 0 0 12px 12px; }
-  .exp-date {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--text-faint);
-    letter-spacing: 0.05em;
-    padding-top: 4px;
-  }
-  .exp-left {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: 200px;
-  }
-  .exp-title {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 4px;
-  }
-  .exp-company {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    letter-spacing: 0.03em;
-  }
-  .exp-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .exp-bullets li {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    padding-left: 1rem;
-    position: relative;
-  }
-  .exp-bullets li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 0.75rem;
-  }
-  .exp-logo {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    display: block;
-  }
-
-  /* ── Projects ───────────────────────────────── */
+  .exp-left { display: flex; flex-direction: column; gap: 0.5rem; max-width: 200px; }
+  .exp-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint); letter-spacing: 0.05em; padding-top: 4px; }
+  .exp-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+  .exp-company { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 0.03em; }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .exp-bullets li { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; padding-left: 1rem; position: relative; }
+  .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
+  .exp-logo { width: 120px; height: 120px; object-fit: contain; display: block; }
   .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; }
   .project-card {
     background: var(--bg2);
@@ -643,93 +430,33 @@ import Layout from '../layouts/Layout.astro';
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
-    border-radius: 12px;
   }
-  .project-num {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--text-faint);
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.1em;
-  }
-  .project-title {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-    color: var(--accent);
-  }
+  .project-num { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-faint); margin-bottom: 1.5rem; letter-spacing: 0.1em; }
+  .project-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem; line-height: 1.2; color: var(--accent); }
   .project-card.featured .project-title { font-size: 2rem; }
-  .project-desc {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
+  .project-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .project-tag {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.05em;
-    padding: 3px 12px;
-    background: var(--bg3);
-    color: var(--text-muted);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
-  }
-  .project-tag:hover {
-    background: rgba(232, 255, 71, 0.12);
-    border-color: rgba(232, 255, 71, 0.35);
-    color: var(--accent);
-    transform: translateY(-1px);
-  }
-  .project-arrow {
-    position: absolute;
-    top: 2rem; right: 2rem;
-    font-size: 1.2rem;
-    color: var(--text-faint);
-    transition: transform 0.3s, color 0.3s;
-  }
+  .project-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.05em; padding: 3px 12px; background: var(--bg3); color: var(--text-muted); border: 1px solid var(--border); border-radius: 14px; transition: all 0.25s; }
+  .project-tag:hover { background: rgba(232,255,71,0.12); border-color: rgba(232,255,71,0.35); color: var(--accent); transform: translateY(-1px); }
+  .project-arrow { position: absolute; top: 2rem; right: 2rem; font-size: 1.2rem; color: var(--text-faint); transition: transform 0.3s, color 0.3s; }
   .project-card:hover .project-arrow { transform: translate(3px, -3px); color: var(--accent); }
-  .project-img-wrap {
-    aspect-ratio: 16/9;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .placeholder-text {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    color: var(--text-faint);
-  }
-
+  .project-img-wrap { aspect-ratio: 16/9; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
   @media (max-width: 768px) {
-  #hero {
-    grid-template-columns: 1fr;
-    padding: 6rem 1.5rem 2rem;
+    #hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 2rem; }
+    .terminal-col { display: none !important; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+    .hero-status { display: none; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .exp-logo { width: 50px; height: 50px; }
+    .certs-grid { overflow-x: auto; }
+    .cert-card { min-width: 280px; }
   }
-  .terminal-col { display: none !important; }
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
-  .hero-status { display: none; }
-  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-  .exp-logo { width: 50px; height: 50px; }
-  .certs-grid { overflow-x: auto; }
-  .cert-card { min-width: 280px; }
-}
 </style>
 
 <script>
   import gsap from 'gsap';
-
   gsap.from('h1', { y: 40, opacity: 0, duration: 1, delay: 0.2, ease: 'power3.out' });
   gsap.from('.hero-sub', { y: 20, opacity: 0, duration: 0.8, delay: 0.5 });
   gsap.from('.hero-cta', { y: 20, opacity: 0, duration: 0.8, delay: 0.7 });
@@ -750,14 +477,11 @@ import Layout from '../layouts/Layout.astro';
     if (e.key !== 'Enter') return;
     const val = termInput.value.trim().toLowerCase();
     termInput.value = '';
-
     const inputLine = document.createElement('div');
     inputLine.className = 't-line';
     inputLine.innerHTML = `<span class="t-prompt">$ </span><span class="t-cmd">${val}</span>`;
     termBody.appendChild(inputLine);
-
     const response = commands[val] || `command not found: ${val}. Try 'help'`;
-
     if (response === '__clear__') {
       termBody.innerHTML = '';
     } else {
@@ -766,7 +490,6 @@ import Layout from '../layouts/Layout.astro';
       outputLine.textContent = response;
       termBody.appendChild(outputLine);
     }
-
     termBody.scrollTop = termBody.scrollHeight;
   });
 </script>

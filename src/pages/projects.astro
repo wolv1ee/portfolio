@@ -35,7 +35,14 @@ const projects = [
           <span class="project-arrow">↗</span>
           {p.image ? (
             <div class="project-img">
-              <img src={p.image} alt={p.title} />
+              <img
+                src={p.image === '/images/Threatlens.png' ? '/images/Threatlens-768w.png' : p.image}
+                srcset={p.image === '/images/Threatlens.png' ? '/images/Threatlens-768w.png 768w, /images/Threatlens-1200w.png 1200w, /images/Threatlens.png 2940w' : p.image}
+                sizes="(max-width: 768px) 100vw, 720px"
+                alt={p.title}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           ) : (
             <div class="project-img project-img--empty">

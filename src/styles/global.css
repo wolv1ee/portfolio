@@ -266,11 +266,9 @@ html { scrollbar-color: var(--color-bg3) var(--color-bg); scrollbar-width: thin;
   @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 
   /* Experience */
-  .exp-list { @apply flex flex-col border border-border rounded-xl; }
-  .exp-item { @apply grid grid-cols-[200px_1fr] gap-8 p-8 border-b border-border transition-all duration-200 relative; }
+  .exp-list { @apply flex flex-col gap-4; }
+  .exp-item { @apply grid grid-cols-[200px_1fr] gap-8 p-8 border border-border rounded-xl transition-all duration-200 relative; }
   .exp-item:hover { @apply bg-bg2 border-accent z-10; box-shadow: 4px 4px 0 0 var(--color-accent); }
-  .exp-item:first-child { @apply rounded-t-xl; }
-  .exp-item:last-child { @apply border-b-0 rounded-b-xl; }
   .exp-left { @apply flex flex-col items-center gap-2; }
   .exp-date { @apply font-mono text-xs text-text-faint tracking-wide text-center; }
   .exp-title { @apply font-display text-lg font-semibold text-accent mb-1; }
@@ -278,7 +276,7 @@ html { scrollbar-color: var(--color-bg3) var(--color-bg); scrollbar-width: thin;
   .exp-bullets { @apply list-none flex flex-col gap-1.5; }
   .exp-bullets li { @apply text-sm text-text-muted leading-[1.6] pl-4 relative; }
   .exp-bullets li::before { content: '→'; @apply absolute left-0 text-accent text-xs; }
-  .exp-logo { @apply w-[100px] h-[100px] object-contain bg-white border-2 border-border rounded-lg p-2 block transition-colors duration-200; }
+  .exp-logo { @apply w-[124px] h-[124px] object-contain bg-white border-2 border-border rounded-lg p-2.5 block transition-colors duration-200; }
   .exp-item:hover .exp-logo { @apply border-accent/60; }
 
   /* Home page featured project */

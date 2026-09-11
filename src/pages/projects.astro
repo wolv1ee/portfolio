@@ -7,14 +7,14 @@ const projects = [
     desc: 'Built a test environment Active Directory lab on Windows Server 2022 from scratch. Covered DC promotion, DNS, DHCP, OUs, GPOs, Kerberos authentication, and security policies including account lockout, complexity requirements, and audit logging.',
     tags: ['Windows Server 2022', 'Active Directory', 'DNS', 'DHCP', 'Kerberos', 'GPO'],
     href: 'https://www.linkedin.com/feed/update/urn:li:activity:7447074994968248321/',
-    image: '/images/ActiveD.jpg',
+    image: '/images/ActiveD.webp',
   },
   {
     title: 'Threatlens Web App',
     desc: 'A file security tool that computes the hash of a downloaded file and\n            cross-references it against known malware databases, warning the user\n            if anything suspicious is detected.',
     tags: ['next.js', 'Tailwind CSS', 'VirusTotal API', 'Google Safe Browsing API', 'Supabase'],
     href: 'https://threatlens-eight.vercel.app/',
-    image: '/images/Threatlens.png',
+    image: '/images/Threatlens.webp',
   },
 ];
 ---
@@ -37,8 +37,8 @@ const projects = [
           {p.image ? (
             <div class="project-img">
               <img
-                src={p.image === '/images/Threatlens.png' ? '/images/Threatlens-768w.png' : p.image}
-                srcset={p.image === '/images/Threatlens.png' ? '/images/Threatlens-768w.png 768w, /images/Threatlens-1200w.png 1200w, /images/Threatlens.png 2940w' : p.image}
+                src={p.image === '/images/Threatlens.webp' ? '/images/Threatlens-768w.webp' : p.image}
+                srcset={p.image === '/images/Threatlens.webp' ? '/images/Threatlens-768w.webp 768w, /images/Threatlens-1200w.webp 1200w, /images/Threatlens.webp 2940w' : p.image}
                 sizes="(max-width: 768px) 100vw, 720px"
                 alt={p.title}
                 loading="lazy"

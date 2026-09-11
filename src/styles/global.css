@@ -308,8 +308,8 @@ html { scrollbar-color: var(--color-bg3) var(--color-bg); scrollbar-width: thin;
   .project-card-full:hover .project-arrow { @apply translate-x-[3px] -translate-y-[3px] text-accent; }
 
   /* All-projects page */
-  .projects-grid-full { @apply grid grid-cols-1 gap-px bg-border border border-border mt-0; }
-  .project-card-full { @apply block bg-white/8 p-10 relative transition-all duration-200 no-underline text-text border-2 border-white/15; }
+  .projects-grid-full { @apply grid grid-cols-1 gap-4 mt-0; }
+  .project-card-full { @apply block bg-white/8 p-10 relative transition-all duration-200 no-underline text-text border-2 border-white/15 rounded-xl; }
   .project-card-full:hover { @apply bg-white/12 border-accent; box-shadow: 4px 4px 0 0 var(--color-accent); }
   .project-img { @apply relative w-full max-h-[300px] mb-6 overflow-hidden bg-bg3 border border-border; }
   .project-img::after {

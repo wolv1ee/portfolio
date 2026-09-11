@@ -3,6 +3,17 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Home">
+  <div id="boot-overlay" aria-hidden="true">
+    <div class="boot-lines" id="bootLines"></div>
+  </div>
+  <script is:inline>
+    (function () {
+      var overlay = document.getElementById('boot-overlay');
+      if (!overlay) return;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced || sessionStorage.getItem('booted')) overlay.style.display = 'none';
+    })();
+  </script>
   <section id="hero">
   <div class="hero-left">
     <h1>
@@ -11,12 +22,12 @@ import Layout from '../layouts/Layout.astro';
     </h1>
     <p class="hero-sub">
       Developer & cybersecurity enthusiast. <br />
-     Computer Information Systems at Western Michigan University.<br />
-      <span style="color:var(--text);">IT Technician · Web Development · Systems Enthusiast.</span>
+      Computer Information Systems at Western Michigan University.
     </p>
+    <p class="hero-role"><span class="t-prompt">&gt;</span><span id="roleText"></span><span class="boot-cursor"></span></p>
     <div class="hero-cta">
-      <a href="/projects" class="btn btn-primary">View Projects →</a>
-      <a href="/contact" class="btn btn-ghost">Get in Touch</a>
+      <a href="/projects" class="btn btn-primary">[ View Projects ]</a>
+      <a href="/contact" class="btn btn-ghost">[ Get in Touch ]</a>
     </div>
   </div>
   <div class="terminal-col">
@@ -27,13 +38,7 @@ import Layout from '../layouts/Layout.astro';
         <span class="t-dot" style="background:#28c840"></span>
         <span class="t-title">saad@portfolio ~ </span>
       </div>
-      <div class="terminal-body" id="termBody">
-        <div class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">whoami</span></div>
-        <div class="t-line t-output">saad - developer & security enthusiast</div>
-        <div class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">status</span></div>
-        <div class="t-line t-output">open to internships</div>
-        <div class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">type 'help' for commands_</span></div>
-      </div>
+      <div class="terminal-body" id="termBody"></div>
       <div class="terminal-input-row">
         <span class="t-prompt">$ </span>
         <input type="text" id="termInput" placeholder="type a command..." autocomplete="off" spellcheck="false" />
@@ -68,19 +73,21 @@ import Layout from '../layouts/Layout.astro';
         <img src="/images/saad.webp" alt="Saad Mahmud" loading="eager" decoding="async" fetchpriority="high" width="3086" height="3744" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
       </div>
     </div>
-    <div class="about-text reveal reveal-delay-1">
-      <h2><em>Developer.</em><br />Security-minded.</h2>
-      <p>
-        I'm studying CIS & Cybersecurity at Western Michigan University, 
-        with hands-on experience as an IT Technician at WMU's College of Arts and Science Technology Services,
-        Outside of Academics, I'm involved with WRAVEN (OSINT Team), the Developers Club (Systems Team),
-        and the Data Science & AI Club (Vice President).
+    <div class="about-text">
+      <h2 class="reveal"><em>Developer.</em><br />Security-minded.</h2>
+      <div class="cmd-line reveal reveal-delay-1"><span class="t-prompt">$</span> cat about.me</div>
+      <p class="reveal reveal-delay-1">
+        I'm studying CIS & Cybersecurity at Western Michigan University,
+        with hands-on experience as an IT Technician at WMU's College of Arts and Science Technology Services.
+        Outside of academics, I'm involved with <span class="text-accent">WRAVEN</span> (OSINT Team), the
+        <span class="text-accent">Developers Club</span> (Systems Team), and the
+        <span class="text-accent">Data Science & AI Club</span> (Vice President).
       </p>
-      <p>
-        I have both technical and administrative experiences which made me adaptable to new challenges and a fast learner.
-        Out of work I am a regular gamer, I love playing video games and enjoy playing MMORPG games the most, Currently obsessed with Path of Exile 2!
+      <p class="reveal reveal-delay-2">
+        I have both technical and administrative experience which made me adaptable to new challenges and a fast learner.
+        Out of work I'm a regular gamer who loves MMORPGs the most, currently obsessed with Path of Exile 2!
       </p>
-      <div class="skills-list">
+      <div class="skills-list reveal reveal-delay-3">
         <span class="skill-tag">Python</span>
         <span class="skill-tag">JavaScript</span>
         <span class="skill-tag">React</span>
@@ -101,22 +108,20 @@ import Layout from '../layouts/Layout.astro';
   <h2>Credentials.</h2>
   <div class="certs-grid reveal">
     <a href="https://www.credly.com/earner/earned/badge/6023f9f4-c4f0-4793-984a-ace59daaa737" target="_blank" class="cert-card">
+      <div class="cert-status"><span class="cert-status-dot"></span>Active</div>
       <img src="/images/security-plus.png" alt="CompTIA Security+" class="cert-icon-img" loading="lazy" decoding="async" />
       <div class="cert-body">
         <div class="cert-name">CompTIA Security+</div>
-        <div class="cert-issuer">CompTIA</div>
-        <div class="cert-date">2026</div>
+        <div class="cert-issuer">CompTIA · 2026</div>
       </div>
-      <div class="cert-badge">Active</div>
     </a>
     <a href="https://www.credly.com/badges/8b55849e-bb8f-41f3-9967-d2d98d60593d/public_url" target="_blank" class="cert-card">
+      <div class="cert-status"><span class="cert-status-dot"></span>Active</div>
       <img src="/images/isc2-cc.png" alt="ISC2 CC" class="cert-icon-img" loading="lazy" decoding="async" />
       <div class="cert-body">
         <div class="cert-name">Certified in Cybersecurity (CC)</div>
-        <div class="cert-issuer">ISC2</div>
-        <div class="cert-date">2026</div>
+        <div class="cert-issuer">ISC2 · 2026</div>
       </div>
-      <div class="cert-badge">Active</div>
     </a>
   </div>
 </section>
@@ -127,7 +132,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="exp-list reveal">
     <div class="exp-item">
       <div class="exp-left">
-        <div class="exp-date">September 2026 – Present</div>
+        <div class="exp-date">Sep 2026 – Present</div>
         <a href="https://kalamazoohousingadvocates.org/" target="_blank">
         <img src="/images/kha-logo.jpg" alt="Kalamazoo Housing Advocates" class="exp-logo" loading="lazy" decoding="async" />
       </a>
@@ -200,10 +205,10 @@ import Layout from '../layouts/Layout.astro';
   <div class="section-label">Featured Work</div>
   <h2>Recent Projects.</h2>
   <p class="section-sub">A few things I made recently.</p>
-  <div class="projects-grid reveal">
+  <div class="projects-grid-home reveal">
         <a href="https://threatlens-eight.vercel.app/" class="project-card-home" target="_blank">
       <div class="project-content">
-        <div class="project-num">01 — Featured</div>
+        <div class="project-num">Featured</div>
         <h3 class="project-title">Malware Analysis Web App</h3>
         <p class="project-desc">
           A file security tool that computes the hash of a downloaded file and 
@@ -233,7 +238,7 @@ import Layout from '../layouts/Layout.astro';
     </a>
   </div>
   <div style="margin-top:2rem;">
-    <a href="/projects" class="btn btn-ghost">All Projects →</a>
+    <a href="/projects" class="btn btn-ghost">[ All Projects ]</a>
   </div>
 </section>
 
@@ -242,21 +247,157 @@ import Layout from '../layouts/Layout.astro';
 
 <script>
   import gsap from 'gsap';
-  gsap.from('h1', { y: 40, opacity: 0, duration: 1, delay: 0.2, ease: 'power3.out' });
-  gsap.from('.hero-sub', { y: 20, opacity: 0, duration: 0.8, delay: 0.5 });
-  gsap.from('.hero-cta', { y: 20, opacity: 0, duration: 0.8, delay: 0.7 });
-  gsap.from('.terminal-col', { x: 20, opacity: 0, duration: 1, delay: 0.4, ease: 'power3.out' });
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const overlay = document.getElementById('boot-overlay');
+  const bootLines = document.getElementById('bootLines');
+  const termBody = document.getElementById('termBody');
+  const h1 = document.querySelector('h1');
+
+  const bootMessages = [
+    'SAAD_OS v2.6 // BOOT SEQUENCE',
+    'LOADING KERNEL... OK',
+    'MOUNTING /home/saad... OK',
+    'STARTING SERVICES: web · security · curiosity... OK',
+    'PRESS START',
+  ];
+
+  const termLines = [
+    { type: 'cmd', text: 'whoami' },
+    { type: 'out', text: 'saad - developer & security enthusiast' },
+    { type: 'cmd', text: 'status' },
+    { type: 'out', text: 'open to internships' },
+    { type: 'cmd', text: "type 'help' for commands_" },
+  ];
+
+  function typeTerminal(instant) {
+    if (!termBody) return;
+    termBody.innerHTML = '';
+    let idx = 0;
+    function renderLine() {
+      if (idx >= termLines.length) return;
+      const line = termLines[idx];
+      const div = document.createElement('div');
+      div.className = line.type === 'cmd' ? 't-line' : 't-line t-output';
+      if (instant) {
+        div.innerHTML = line.type === 'cmd'
+          ? `<span class="t-prompt">$ </span><span class="t-cmd">${line.text}</span>`
+          : line.text;
+        termBody.appendChild(div);
+        idx++;
+        renderLine();
+        return;
+      }
+      if (line.type === 'cmd') {
+        div.innerHTML = '<span class="t-prompt">$ </span><span class="t-cmd"></span>';
+        termBody.appendChild(div);
+        const cmdSpan = div.querySelector('.t-cmd');
+        let c = 0;
+        const typer = setInterval(() => {
+          cmdSpan.textContent += line.text[c];
+          c++;
+          if (c >= line.text.length) {
+            clearInterval(typer);
+            idx++;
+            setTimeout(renderLine, 180);
+          }
+        }, 28);
+      } else {
+        div.textContent = line.text;
+        termBody.appendChild(div);
+        idx++;
+        setTimeout(renderLine, 220);
+      }
+    }
+    renderLine();
+  }
+
+  const roles = ['IT Technician', 'Web Developer', 'Systems Enthusiast', 'Cybersecurity Enthusiast'];
+
+  function typeRoleLoop() {
+    const el = document.getElementById('roleText');
+    if (!el) return;
+    if (reducedMotion) { el.textContent = roles[0]; return; }
+    let roleIdx = 0;
+    let charIdx = 0;
+    let deleting = false;
+    function tick() {
+      const current = roles[roleIdx];
+      if (!deleting) {
+        charIdx++;
+        el.textContent = current.slice(0, charIdx);
+        if (charIdx === current.length) {
+          deleting = true;
+          setTimeout(tick, 1500);
+          return;
+        }
+      } else {
+        charIdx--;
+        el.textContent = current.slice(0, charIdx);
+        if (charIdx === 0) {
+          deleting = false;
+          roleIdx = (roleIdx + 1) % roles.length;
+        }
+      }
+      setTimeout(tick, deleting ? 28 : 55);
+    }
+    tick();
+  }
+
+  function playHeroEntrance() {
+    if (reducedMotion) return;
+    gsap.from('.hero-sub', { y: 20, opacity: 0, duration: 0.8, delay: 0.3 });
+    gsap.from('.hero-role', { y: 20, opacity: 0, duration: 0.8, delay: 0.45 });
+    gsap.from('.hero-cta', { y: 20, opacity: 0, duration: 0.8, delay: 0.6 });
+    gsap.from('.terminal-col', { x: 20, opacity: 0, duration: 1, delay: 0.2, ease: 'power3.out' });
+  }
+
+  const alreadyBooted = sessionStorage.getItem('booted');
+
+  if (overlay && !reducedMotion && !alreadyBooted) {
+    let i = 0;
+    function nextBootLine() {
+      if (i < bootMessages.length) {
+        const p = document.createElement('div');
+        p.textContent = bootMessages[i];
+        bootLines?.appendChild(p);
+        i++;
+        setTimeout(nextBootLine, i === bootMessages.length ? 500 : 240);
+      } else {
+        powerOn();
+      }
+    }
+    function powerOn() {
+      overlay.classList.add('power-off');
+      h1?.classList.add('glitch-in');
+      playHeroEntrance();
+      typeTerminal(false);
+      typeRoleLoop();
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        sessionStorage.setItem('booted', '1');
+      }, 600);
+    }
+    nextBootLine();
+  } else {
+    if (overlay) overlay.style.display = 'none';
+    playHeroEntrance();
+    typeTerminal(reducedMotion);
+    typeRoleLoop();
+  }
 
   const commands = {
-    help: 'Available: help, about, skills, contact, clear',
+    help: 'Available: help, about, skills, contact, sudo, coffee, matrix, clear',
     about: 'Saad Mahmud - Dev & Cybersecurity @WMU | IT Technician @CASTS',
     skills: 'Python · JS · React · Astro · Linux · Network & System Admin',
     contact: 'Refer to the contact page!',
+    sudo: 'nice try. permission denied.',
+    coffee: 'brewing... ready.',
     clear: '__clear__',
   };
 
   const termInput = document.getElementById('termInput');
-  const termBody = document.getElementById('termBody');
+  const terminalEl = document.querySelector('.terminal');
 
   termInput?.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter') return;
@@ -266,6 +407,18 @@ import Layout from '../layouts/Layout.astro';
     inputLine.className = 't-line';
     inputLine.innerHTML = `<span class="t-prompt">$ </span><span class="t-cmd">${val}</span>`;
     termBody.appendChild(inputLine);
+
+    if (val === 'matrix') {
+      const outputLine = document.createElement('div');
+      outputLine.className = 't-line t-output';
+      outputLine.textContent = 'wake up, saad...';
+      termBody.appendChild(outputLine);
+      terminalEl?.classList.add('matrix-mode');
+      setTimeout(() => terminalEl?.classList.remove('matrix-mode'), 2200);
+      termBody.scrollTop = termBody.scrollHeight;
+      return;
+    }
+
     const response = commands[val] || `command not found: ${val}. Try 'help'`;
     if (response === '__clear__') {
       termBody.innerHTML = '';

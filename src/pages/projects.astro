@@ -3,18 +3,31 @@ import Layout from '../layouts/Layout.astro';
 
 const projects = [
   {
+    title: 'WMU Student Employment Annual Report 2025-26',
+    desc: "Co-authored WMU's official annual report on 2,248 student employees in 3,385 positions, analyzing employment rate, concurrent jobs, and average wages ($15.30 per student) by domestic and international status.",
+    tags: ['SQL', 'Microsoft Excel', 'PeopleSoft', 'Handshake', 'Banner', 'Data Analysis'],
+    href: 'https://files.wmich.edu/s3fs-public/2026-08/wmu_student_employment_annual_report_2025-26.docx',
+    image: '/images/wmu-report.webp',
+  },
+  {
+    title: 'ThreatLens: Malware Analysis Web App',
+    desc: 'A full-stack cybersecurity platform that analyzes files and URLs in real time, integrating the VirusTotal and Google Safe Browsing APIs for threat detection.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'VirusTotal API', 'Google Safe Browsing API'],
+    href: 'https://threatlens-eight.vercel.app/',
+    image: '/images/Threatlens.webp',
+  },
+  {
     title: 'Active Directory Home Lab',
-    desc: 'Built a test environment Active Directory lab on Windows Server 2022 from scratch. Covered DC promotion, DNS, DHCP, OUs, GPOs, Kerberos authentication, and security policies including account lockout, complexity requirements, and audit logging.',
-    tags: ['Windows Server 2022', 'Active Directory', 'DNS', 'DHCP', 'Kerberos', 'GPO'],
+    desc: 'Built a Windows Server Active Directory domain in VMware, creating users and groups, implementing Group Policy Objects, and automating administrative tasks with PowerShell.',
+    tags: ['Windows Server', 'Active Directory', 'VMware', 'Group Policy', 'PowerShell', 'Kerberos'],
     href: 'https://www.linkedin.com/feed/update/urn:li:activity:7447074994968248321/',
     image: '/images/ActiveD.webp',
   },
   {
-    title: 'Threatlens Web App',
-    desc: 'A file security tool that computes the hash of a downloaded file and\n            cross-references it against known malware databases, warning the user\n            if anything suspicious is detected.',
-    tags: ['next.js', 'Tailwind CSS', 'VirusTotal API', 'Google Safe Browsing API', 'Supabase'],
-    href: 'https://threatlens-eight.vercel.app/',
-    image: '/images/Threatlens.webp',
+    title: 'AI Inference Server',
+    desc: 'Leading the build of a self-hosted AI inference server running containerized vLLM with an OpenAI-compatible API, for the Data Science and AI Club.',
+    tags: ['vLLM', 'Docker', 'Linux', 'OpenAI-compatible API', 'Self-hosted', 'In Progress'],
+    href: 'https://github.com/Data-Science-Club-at-WMU/ai-interference-server',
   },
 ];
 ---
@@ -47,7 +60,7 @@ const projects = [
             </div>
           ) : (
             <div class="project-img project-img--empty">
-              <span>📸</span>
+              <span class="font-mono text-sm tracking-wide">Coming Soon</span>
             </div>
           )}
           <h3 class="project-title">{p.title}</h3>
